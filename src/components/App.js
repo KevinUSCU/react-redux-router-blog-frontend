@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BlogPostList from '../containers/BlogPostList'
+import BlogPost from '../containers/BlogPost'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 
@@ -20,7 +21,10 @@ class App extends Component {
           <div className='row'>
             <div className='col-md-12'>
               <BrowserRouter>
-                <Route path='/' component={BlogPostList} />
+                <Switch>
+                  <Route path='/blogposts/:id' component={BlogPost} />
+                  <Route path='/' component={BlogPostList} />
+                </Switch>
               </BrowserRouter>
             </div>
           </div>
