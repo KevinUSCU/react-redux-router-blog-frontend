@@ -28,8 +28,32 @@ export function fetchBlogPost(blogPostId){
   }
 }
 
-export function deleteBlogPost(blogPostId) {
+export function createBlogPost(blogPost, cb) {
+  return async (dispatch) => {
+    const res = await request('/api/blogposts', 'POST', blogPost)
+    const json = await res.json()
 
+    dispatch({
+      type: CREATE_BLOG_POST_SUCESS,
+      payload: json.BlogPost
+    })
+
+    cb()
+  }
+}
+
+export function deleteBlogPost(blogPostId, cb) {
+  return async (dispatch) => {
+    const res = await request(`/api/blogposts/${blogPostId}`, 'DELETE')
+    const json = await res.json()
+
+    dispatch({
+      type: DELETE_BLOG_POST_SUCCESS,
+      payload: json.BlogPost
+    })
+
+    cb()
+  }
 }
 
 // ----------------------------------------------------------------------
