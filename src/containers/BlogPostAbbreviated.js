@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 function truncateAndSeparateContent(content){
   return `${content.slice(0, 300)}...`.split('\n')
@@ -21,7 +22,7 @@ function BlogPostAbbrebiated(props){
             ))
           }
         </div>
-        <p><span>Continue Reading -></span></p>
+        <p><Link to={ `/blogposts/${id}` } >Continue Reading -></Link></p>
       </div>
     </div>
   )
