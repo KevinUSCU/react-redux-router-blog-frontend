@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createBlogPost } from '../actions'
+import { Link } from 'react-router-dom'
 
 function BlogPostCreate(props) {
 
@@ -23,7 +24,7 @@ function BlogPostCreate(props) {
         }}>
         <div className='col-md-12'>
           <div>
-            <span>Front page</span>
+            <Link to={'/'}>Front page</Link>
           </div>
         </div>
       </div>
