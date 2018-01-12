@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BlogPostList from '../containers/BlogPostList'
 import BlogPost from '../containers/BlogPost'
+import BlogPostCreate from '../containers/BlogPostCreate'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 
@@ -22,6 +23,7 @@ class App extends Component {
             <div className='col-md-12'>
               <BrowserRouter>
                 <Switch>
+                  <Route path='/blogposts/new' component={BlogPostCreate} />
                   <Route path='/blogposts/:id' component={BlogPost} />
                   <Route path='/' component={BlogPostList} />
                 </Switch>
