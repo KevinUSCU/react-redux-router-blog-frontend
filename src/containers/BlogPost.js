@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import { fetchBlogPost, deleteBlogPost } from '../actions'
 
@@ -30,7 +31,7 @@ class BlogPost extends Component{
         <div className='row' style={{marginBottom: '32px'}}>
           <div className='col-md-12'>
             <div className='d-flex w-100 justify-content-between'>
-              <span>Front page</span>
+              <Link to={'/'}>Front page</Link>
               <div
                 className='btn btn-danger'
                 onClick={() => this.deleteBlogPost(blogPost.id)}>
